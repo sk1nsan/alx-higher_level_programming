@@ -4,7 +4,7 @@
  *
  * @list: list to be checked
  *
- * Return: 1 if there is no cycle
+ * Return: 1 if there is a cycle
  * 0 otherwise
 */
 int check_cycle(listint_t *list)
@@ -16,12 +16,14 @@ int check_cycle(listint_t *list)
 		return (0);
 	while (list->next != NULL)
 	{
+		buffer[i] = list;
 		for (j = 0; j <= i; j++)
 		{
 			if (list->next == buffer[j])
-				return (0);
+				return (1);
 		}
-		buffer[i] = list->next;
+		i++;
+		list = list->next;
 	}
-	return (1);
+	return (0);
 }
