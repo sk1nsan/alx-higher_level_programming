@@ -9,7 +9,7 @@
 */
 int check_cycle(listint_t *list)
 {
-	listint_t *buffer[1024];
+	listint_t *buffer[100];
 	int i = 0, j;
 
 	if (list == NULL)
