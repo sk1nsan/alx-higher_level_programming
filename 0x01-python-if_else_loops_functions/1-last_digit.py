@@ -5,7 +5,7 @@ num = number
 n = num % 10
 if number < 0:
     num = -number
-    n = num % 10
+    n = - (num % 10)
 if n > 5:
     print(f"Last digit of {number:d} is {n:d} and is greater than 5")
 elif n == 0:
