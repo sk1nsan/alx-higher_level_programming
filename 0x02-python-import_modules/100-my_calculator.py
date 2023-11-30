@@ -1,7 +1,10 @@
 #!/usr/bin/python3
 from calculator_1 import add, sub, mul, div
 from sys import argv, exit
+import argh
+
 if __name__ == "__main__":
+    argh.dispatch_command(main)
     if len(argv) != 4:
         for i in argv:
             print(i)
