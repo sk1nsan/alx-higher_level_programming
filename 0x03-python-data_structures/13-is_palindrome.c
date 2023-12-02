@@ -28,7 +28,7 @@ int len_linked(listint_t *head)
 int is_palindrome(listint_t **head)
 {
 	listint_t *current;
-	int arr[1024];
+	int arr[10000];
 	int i = 0, j = 0, n = 0;
 
 	if (!head || !(*head))
