@@ -28,7 +28,7 @@ int len_linked(listint_t *head)
 int is_palindrome(listint_t **head)
 {
 	listint_t *current;
-	int *arr;
+	int arr[1024];
 	int i = 0, j = 0, n = 0;
 
 	if (!head || !(*head))
@@ -38,8 +38,6 @@ int is_palindrome(listint_t **head)
 	n = len_linked(*head);
 	if (n == 1)
 		return (1);
-	arr = malloc(sizeof(int) * n);
-
 	while (current != NULL)
 	{
 		arr[i] = current->n;
@@ -50,11 +48,8 @@ int is_palindrome(listint_t **head)
 	for (; j < (i / 2); j++)
 	{
 		if (arr[j] != arr[i - 1 - j])
-		{
-			free(arr);
 			return (0);
-		}
+
 	}
-	free(arr);
 	return (1);
 }
