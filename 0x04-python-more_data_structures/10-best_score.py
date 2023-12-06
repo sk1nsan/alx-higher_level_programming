@@ -6,4 +6,3 @@ def best_score(a_dictionary):
             if a_dictionary[x] > r:
                 r = a_dictionary[x]
         return r
-    return None
