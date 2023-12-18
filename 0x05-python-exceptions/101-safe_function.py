@@ -3,5 +3,5 @@ def safe_function(fct, *args):
     try:
         return fct(*args)
     except Exception as e:
-        print("Error: {}".format(e))
+        print("Exception: {}".format(e))
         return None
