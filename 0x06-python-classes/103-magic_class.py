@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-import math
+from math import pi
 
 """class MagicClass"""
 
@@ -15,7 +15,7 @@ class MagicClass:
         self.radius = radius
 
     def area(self):
-        return self.radius**2 * math.pi
+        return self.radius**2 * pi
 
     def circumference(self):
-        return 2 * math.pi * self.radius
+        return 2 * pi * self.radius
