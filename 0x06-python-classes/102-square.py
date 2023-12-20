@@ -22,26 +22,32 @@ class Square:
 
     def area(self):
         return self.__size**2
+
     def __lt__(self, other):
         if other.area() > self.area():
             return True
         return False
+
     def __le__(self, other):
         if other.area() >= self.area():
             return True
         return False
+
     def __eq__(self, other):
         if other.area() == self.area():
             return True
         return False
+
     def __ne__(self, other):
         if other.area() != self.area():
             return True
         return False
+
     def __ge__(self, other):
         if other.area() <= self.area():
             return True
         return False
+
     def __gt__(self, other):
         if other.area() < self.area():
             return True
