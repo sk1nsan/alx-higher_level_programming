@@ -1,0 +1,41 @@
+The 2-matrix_divided module
+======================
+
+Using matrix_divided
+-------------------
+>>> matrix_divided = __import__("2-matrix_divided").matrix_divided
+
+riase ZeroDivisionError if div is 0
+
+>>> print(matrix_divided([[1,2,3],[4,5,6]], 0))
+Traceback (most recent call last):
+ZeroDivisionError: division by zero
+
+raise TypeError if elements of matrix aren't integers or floats
+
+>>> print(matrix_divided([[1,2,3],['s',5,6]], 10))
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+>>> print(matrix_divided([[1,2,3],[4,5,[1]]], 10))
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+raise TypeError if div isn't an integer nor a float
+
+>>> print(matrix_divided([[1,2,3],[4,5,6]], 'a'))
+Traceback (most recent call last):
+TypeError: div must be a number
+
+raise TypeError if row size isn't constant
+>>> print(matrix_divided([[1,2,3],[4,5]], 5))
+Traceback (most recent call last):
+TypeError: Each row of the matrix must have the same size
+
+works with floats
+>>> print(matrix_divided([[12.3,32.1,98.6],[8.7,11.9,21.0]], 5.6))
+[[2.2, 5.73, 17.61], [1.55, 2.12, 3.75]]
+
+works with different size matrices
+>>> print(matrix_divided([[12,6],[8,4],[2,10]], 2))
+[[6.0, 3.0], [4.0, 2.0], [1.0, 5.0]]

@@ -1,0 +1,41 @@
+The 0-add_integer module
+======================
+
+Using add_integer
+-------------------
+>>> add_integer = __import__("0-add_integer").add_integer
+
+it works with 2 ints
+
+>>> add_integer(10, 5)
+15
+>>> add_integer(-101, 5)
+-96
+
+a must have a value but b is defaulted to 98
+
+>>> add_integer(0)
+98
+
+it converts ints to floats
+
+>>> add_integer(10.9, 5.1)
+15
+
+raises TypeError if anything other than int or float is inputed
+
+>>> add_integer("10", 5)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>>> add_integer(10, [10, 3 , 2])
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+>>> add_integer({'a':5}, 5)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>>> add_integer(10, None)
+Traceback (most recent call last):
+TypeError: b must be an integer

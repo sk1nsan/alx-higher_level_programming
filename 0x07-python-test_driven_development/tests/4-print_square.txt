@@ -1,0 +1,28 @@
+The 4-print_square module
+======================
+
+Using say_my_name
+-------------------
+>>> print_square = __import__("4-print_square").print_square
+
+raise TypeError if size is not an integer
+
+>>> print_square('s')
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+raise ValueError if size is less than 0
+
+>>> print_square(-1)
+Traceback (most recent call last):
+ValueError: size must be >= 0
+
+raise TypeError if size is a float
+
+>>> print_square(2.0)
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+works with 0
+
+>>> print_square(0)
