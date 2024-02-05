@@ -68,6 +68,30 @@ TypeError: a must be an integer
 Traceback (most recent call last):
 TypeError: a must be an integer
 
+>>> bg.integer_validator("a", [1, 2])
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>>> bg.integer_validator("a", [])
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>>> bg.integer_validator("a", {})
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>>> bg.integer_validator("a", {1:2})
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>>> bg.integer_validator("a", ())
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>>> bg.integer_validator("a", (1, 2))
+Traceback (most recent call last):
+TypeError: a must be an integer
+
 ValueError when value is less than or equal to zero
 
 >>> bg.integer_validator("a", 0)
