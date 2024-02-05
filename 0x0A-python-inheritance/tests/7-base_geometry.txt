@@ -1,0 +1,106 @@
+The 7-base_geometry module
+======================
+
+Using integer_validator
+-------------------
+>>> BaseGeometry = __import__("7-base_geometry").BaseGeometry
+
+error when no arguments
+
+>>> bg = BaseGeometry()
+>>> bg.integer_validator()
+Traceback (most recent call last):
+      File "/usr/lib/python3.10/doctest.py", line 1350, in __run
+        exec(compile(example.source, filename, "single",
+      File "<doctest 7-base_geometry.txt[2]>", line 1, in <module>
+        bg.integer_validator()
+TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+
+error when name is missing
+
+>>> bg.integer_validator(value= 0)
+Traceback (most recent call last):
+      File "/usr/lib/python3.10/doctest.py", line 1350, in __run
+        exec(compile(example.source, filename, "single",
+      File "<doctest 7-base_geometry.txt[3]>", line 1, in <module>
+        bg.integer_validator(value= 0)
+TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'name'
+
+
+error when value is missing
+
+>>> bg.integer_validator("a")
+Traceback (most recent call last):
+      File "/usr/lib/python3.10/doctest.py", line 1350, in __run
+        exec(compile(example.source, filename, "single",
+      File "<doctest 7-base_geometry.txt[3]>", line 1, in <module>
+        bg.integer_validator(value= 0)
+TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
+
+
+error when more than 2 argument
+
+>>> bg.integer_validator("a", 100, 300)
+Traceback (most recent call last):
+      File "/usr/lib/python3.10/doctest.py", line 1350, in __run
+        exec(compile(example.source, filename, "single",
+      File "<doctest 7-base_geometry.txt[5]>", line 1, in <module>
+        bg.integer_validator("a", 100, 300)
+TypeError: BaseGeometry.integer_validator() takes 3 positional arguments but 4 were given
+
+
+works when value is intger greater than 0 and name is a string
+
+>>> bg.integer_validator("a", 100)
+
+works when value is intger greater than 0 and name is a not a string
+
+>>> bg.integer_validator(10, 100)
+>>> bg.integer_validator(None, 100)
+
+
+TypeError when value is not an intger
+
+>>> bg.integer_validator("a", "100")
+Traceback (most recent call last):
+      File "/usr/lib/python3.10/doctest.py", line 1350, in __run
+        exec(compile(example.source, filename, "single",
+      File "<doctest 7-base_geometry.txt[8]>", line 1, in <module>
+        bg.integer_validator("a", "100")
+      File "/root/alx/alx-higher_level_programming/0x0A-python-inheritance/7-base_geometry.py", line 11, in integer_validator
+        raise TypeError("{} must be an integer".format(name))
+TypeError: a must be an integer
+
+>>> bg.integer_validator("a", None)
+Traceback (most recent call last):
+      File "/usr/lib/python3.10/doctest.py", line 1350, in __run
+        exec(compile(example.source, filename, "single",
+      File "<doctest 7-base_geometry.txt[8]>", line 1, in <module>
+        bg.integer_validator("a", "100")
+      File "/root/alx/alx-higher_level_programming/0x0A-python-inheritance/7-base_geometry.py", line 11, in integer_validator
+        raise TypeError("{} must be an integer".format(name))
+TypeError: a must be an integer
+
+
+ValueError when value is less than or equal to zero
+
+>>> bg.integer_validator("a", 0)
+Traceback (most recent call last):
+      File "/usr/lib/python3.10/doctest.py", line 1350, in __run
+        exec(compile(example.source, filename, "single",
+      File "<doctest 7-base_geometry.txt[10]>", line 1, in <module>
+        bg.integer_validator("a", 0)
+      File "/root/alx/alx-higher_level_programming/0x0A-python-inheritance/7-base_geometry.py", line 13, in integer_validator
+        raise ValueError("{} must be greater than 0".format(name))
+ValueError: a must be greater than 0
+
+>>> bg.integer_validator("a", -100)
+Traceback (most recent call last):
+      File "/usr/lib/python3.10/doctest.py", line 1350, in __run
+        exec(compile(example.source, filename, "single",
+      File "<doctest 7-base_geometry.txt[10]>", line 1, in <module>
+        bg.integer_validator("a", 0)
+      File "/root/alx/alx-higher_level_programming/0x0A-python-inheritance/7-base_geometry.py", line 13, in integer_validator
+        raise ValueError("{} must be greater than 0".format(name))
+ValueError: a must be greater than 0
