@@ -54,10 +54,6 @@ works when value is intger greater than 0 and name is a string
 
 >>> bg.integer_validator("a", 100)
 
-works when value is intger greater than 0 and name is a not a string
-
->>> bg.integer_validator(10, 100)
-
 
 TypeError when value is not an intger
 
