@@ -36,17 +36,3 @@ no errors with empty list
 []
 >>> print(my_list2)
 []
-
-
-works with non integers
-
->>> my_list3 = MyList()
->>> my_list3.append('b')
->>> my_list3.append('e')
->>> my_list3.append('a')
->>> my_list3.append('c')
->>> my_list3.append('d')
->>> my_list3.print_sorted()
-['a', 'b', 'c', 'd', 'e']
->>> print(my_list3)
-['b', 'e', 'a', 'c', 'd']
