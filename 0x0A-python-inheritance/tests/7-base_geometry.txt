@@ -5,3 +5,4 @@ Using integer_validator
 -------------------
 >>> BaseGeometry = __import__("7-base_geometry").BaseGeometry
 >>> bg = BaseGeometry()
+>>> bg.integer_validator("name", "John")
