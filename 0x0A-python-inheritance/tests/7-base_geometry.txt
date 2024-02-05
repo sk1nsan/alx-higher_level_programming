@@ -5,6 +5,50 @@ Using integer_validator
 -------------------
 >>> BaseGeometry = __import__("7-base_geometry").BaseGeometry
 
+error when no arguments
+
+>>> bg = BaseGeometry()
+>>> bg.integer_validator()
+Traceback (most recent call last):
+      File "/usr/lib/python3.10/doctest.py", line 1350, in __run
+        exec(compile(example.source, filename, "single",
+      File "<doctest 7-base_geometry.txt[2]>", line 1, in <module>
+        bg.integer_validator()
+TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+
+error when name is missing
+
+>>> bg.integer_validator(value= 0)
+Traceback (most recent call last):
+      File "/usr/lib/python3.10/doctest.py", line 1350, in __run
+        exec(compile(example.source, filename, "single",
+      File "<doctest 7-base_geometry.txt[3]>", line 1, in <module>
+        bg.integer_validator(value= 0)
+TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'name'
+
+
+error when value is missing
+
+>>> bg.integer_validator("a")
+Traceback (most recent call last):
+      File "/usr/lib/python3.10/doctest.py", line 1350, in __run
+        exec(compile(example.source, filename, "single",
+      File "<doctest 7-base_geometry.txt[3]>", line 1, in <module>
+        bg.integer_validator(value= 0)
+TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
+
+
+error when more than 2 argument
+
+>>> bg.integer_validator("a", 100, 300)
+Traceback (most recent call last):
+      File "/usr/lib/python3.10/doctest.py", line 1350, in __run
+        exec(compile(example.source, filename, "single",
+      File "<doctest 7-base_geometry.txt[5]>", line 1, in <module>
+        bg.integer_validator("a", 100, 300)
+TypeError: BaseGeometry.integer_validator() takes 3 positional arguments but 4 were given
+
 
 works when value is intger greater than 0 and name is a string
 
