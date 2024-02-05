@@ -5,11 +5,3 @@ Using integer_validator
 -------------------
 >>> BaseGeometry = __import__("7-base_geometry").BaseGeometry
 >>> bg = BaseGeometry()
-
-error when no arguments
-
->>> try:
-...     bg.integer_validator()
-... except Exception as e:
-...    print("[{}] {}".format(e.__class__.__name__, e))
-[TypeError] BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
