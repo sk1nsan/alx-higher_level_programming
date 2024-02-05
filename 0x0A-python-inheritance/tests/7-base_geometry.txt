@@ -4,3 +4,12 @@ The 7-base_geometry module
 Using integer_validator
 -------------------
 >>> BaseGeometry = __import__("7-base_geometry").BaseGeometry
+
+error when no arguments
+
+>>> bg = BaseGeometry()
+
+works when value is intger greater than 0 and name is a not a string
+
+>>> bg.integer_validator(10, 100)
+>>> bg.integer_validator(None, 100)
