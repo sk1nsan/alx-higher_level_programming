@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """ BaseGeometry class """
 
-asfasf
+
 class BaseGeometry:
     """BaseGeometry class"""
 
