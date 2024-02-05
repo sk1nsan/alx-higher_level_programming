@@ -4,3 +4,14 @@ The 7-base_geometry module
 Using integer_validator
 -------------------
 >>> BaseGeometry = __import__("7-base_geometry").BaseGeometry
+
+error when no arguments
+
+>>> bg = BaseGeometry()
+>>> bg.integer_validator()
+Traceback (most recent call last):
+      File "/usr/lib/python3.10/doctest.py", line 1350, in __run
+        exec(compile(example.source, filename, "single",
+      File "<doctest 7-base_geometry.txt[2]>", line 1, in <module>
+        bg.integer_validator()
+TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
