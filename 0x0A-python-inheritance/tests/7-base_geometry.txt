@@ -27,6 +27,10 @@ error when value is missing
 Traceback (most recent call last):
 TypeError: integer_validator() missing 1 required positional argument: 'value'
 
+>>> bg.integer_validator("a",)
+Traceback (most recent call last):
+TypeError: integer_validator() missing 1 required positional argument: 'value'
+
 
 error when more than 2 argument
 
@@ -42,7 +46,8 @@ works when value is intger greater than 0 and name is a string
 works when value is intger greater than 0 and name is a not a string
 
 >>> bg.integer_validator(10, 100)
->>> bg.integer_validator(None, 100)
+>>> bg.integer_validator(None, 89)
+>>> bg.integer_validator([1, 2, 3], 175)
 
 
 TypeError when value is not an intger
@@ -55,6 +60,13 @@ TypeError: a must be an integer
 Traceback (most recent call last):
 TypeError: a must be an integer
 
+>>> bg.integer_validator("a", [1, 2, 3])
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>>> bg.integer_validator("a", 175.2)
+Traceback (most recent call last):
+TypeError: a must be an integer
 
 ValueError when value is less than or equal to zero
 
