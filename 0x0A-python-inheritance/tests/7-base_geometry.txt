@@ -6,7 +6,6 @@ Using integer_validator
 >>> BaseGeometry = __import__("7-base_geometry").BaseGeometry
 
 
-ValueError when value is less than or equal to zero
 
 >>> bg.integer_validator("a", 0)
 Traceback (most recent call last):
