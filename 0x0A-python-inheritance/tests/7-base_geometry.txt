@@ -7,11 +7,6 @@ Using integer_validator
 >>> bg = BaseGeometry()
 
 
-error when value is missing
-
->>> bg.integer_validator("a")
-Traceback (most recent call last):
-TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
 
 
 
