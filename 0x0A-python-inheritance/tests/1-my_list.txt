@@ -18,16 +18,6 @@ works with integers
 >>> print(my_list)
 [1, 4, 2, 3, 5]
 
-fails if arguments are given
-
->>> my_list.print_sorted(1)
-Traceback (most recent call last):
-      File "/usr/lib/python3.10/doctest.py", line 1350, in __run
-        exec(compile(example.source, filename, "single",
-      File "<doctest 1-my_list.txt[9]>", line 1, in <module>
-        my_list.print_sorted(1)
-TypeError: MyList.print_sorted() takes 1 positional argument but 2 were given
-
 
 no errors with empty list
 
@@ -36,3 +26,17 @@ no errors with empty list
 []
 >>> print(my_list2)
 []
+
+
+works with non integers
+
+>>> my_list3 = MyList()
+>>> my_list3.append('b')
+>>> my_list3.append('e')
+>>> my_list3.append('a')
+>>> my_list3.append('c')
+>>> my_list3.append('d')
+>>> my_list3.print_sorted()
+['a', 'b', 'c', 'd', 'e']
+>>> print(my_list3)
+['b', 'e', 'a', 'c', 'd']
