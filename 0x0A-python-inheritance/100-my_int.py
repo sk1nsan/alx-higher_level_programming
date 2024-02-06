@@ -3,6 +3,7 @@
 
 
 class MyInt(int):
+    """ MyInt  """
     def __eq__(self, otherint):
         """ Equality method  """
         return int.__ne__(self, otherint)
