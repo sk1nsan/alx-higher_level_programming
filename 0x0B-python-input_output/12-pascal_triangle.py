@@ -3,6 +3,7 @@
 
 
 def fact(n):
+    """function to compute factorial"""
     if n == 0 or n == 1:
         return 1
     return fact(n - 1) * n
@@ -10,9 +11,10 @@ def fact(n):
 
 def pascal_triangle(n):
     """pascal_triangle function"""
-    if n <= 0:
-        return []
+
     all_pasacal = []
+    if n <= 0:
+        return all_pasacal
     for i in range(0, n):
         pascal = []
         for j in range(0, i + 1):
