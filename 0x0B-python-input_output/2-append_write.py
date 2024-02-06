@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-"""write_file function """
+"""append_write function """
 
 
-def write_file(filename="", text=""):
-    """function to write into a file"""
+def append_write(filename="", text=""):
+    """function to append into a file"""
     with open(filename, "a", encoding="UTF8") as f:
         return f.write(text)
