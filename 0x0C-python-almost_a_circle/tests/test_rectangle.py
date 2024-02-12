@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Unittest for Base([..])
+"""Unittest for Rectangle([..])
 """
 
 
@@ -178,3 +178,13 @@ class TestRectangle(unittest.TestCase):
         with redirect_stdout(buf7):
             print(r1)
         self.assertEqual(buf7.getvalue(), "[Rectangle] (107) 9/112 - 80/151\n")
+
+    def test_to_dictionary(self):
+        r1 = Rectangle(10, 2, 1, 5, 108)
+        r1_dictionary = r1.to_dictionary()
+        buf = io.StringIO()
+        with redirect_stdout(buf):
+            print(r1_dictionary, end="")
+        self.assertEqual(
+            buf.getvalue(),
+            "{'id': 108, 'width': 10, 'height': 2, 'x': 1, 'y': 5}")

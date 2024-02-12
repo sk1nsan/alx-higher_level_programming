@@ -11,6 +11,7 @@ class Base:
     __nb_objects = 0
 
     def __init__(self, id=None):
+        """init function"""
         if id is not None:
             self.id = id
         else:
@@ -19,18 +20,21 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
+        """convert object dict to json string"""
         if list_dictionaries is None or len(list_dictionaries) == 0:
             return "[]"
         return json.dumps(list_dictionaries)
 
     @staticmethod
     def from_json_string(json_string):
+        """convert json string to object dict"""
         if json_string is None or len(json_string) == 0:
             return []
         return json.loads(json_string)
 
     @classmethod
     def save_to_file(cls, list_objs):
+        """save object dict as json file"""
         dict_objs = []
         if list_objs:
             for i in list_objs:
@@ -41,12 +45,14 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
+        """create a new object using dict"""
         c1 = cls(1000, 1000, id=1000)
         c1.update(**dictionary)
         return c1
 
     @classmethod
     def load_from_file(cls):
+        """load object dict from json file"""
         list_instances = []
         if not os.path.isfile(cls.__name__ + ".json"):
             return list_instances
@@ -59,6 +65,7 @@ class Base:
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
+        """save object dict as csv file"""
         dict_objs = []
         for i in range(len(list_objs)):
             dict_objs.append(list_objs[i].to_dictionary())
@@ -75,6 +82,7 @@ class Base:
 
     @classmethod
     def load_from_file_csv(cls):
+        """load object dict from csv file"""
         list_instances = []
         dict_instances = []
         filename = cls.__name__ + ".csv"

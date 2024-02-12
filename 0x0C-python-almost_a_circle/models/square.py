@@ -18,10 +18,12 @@ class Square(Rectangle):
 
     @property
     def size(self):
+        """size getter"""
         return self.width
 
     @size.setter
     def size(self, value):
+        """size setter"""
         if type(value) is not int:
             raise TypeError("width must be an integer")
         if value <= 0:
@@ -40,5 +42,6 @@ class Square(Rectangle):
                 setattr(self, key, kwargs[key])
 
     def to_dictionary(self):
+        """return dict representation of an object"""
         attrs = ["id", "size", "x", "y"]
         return {k: getattr(self, k) for k in attrs}
