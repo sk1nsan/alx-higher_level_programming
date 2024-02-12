@@ -26,8 +26,8 @@ class TestBase(unittest.TestCase):
         dictionary = r1.to_dictionary()
         json_dictionary = Base.to_json_string([dictionary])
         self.assertEqual(
-            json_dictionary, '[{"id": 123, "width": 10,'
-            ' "height": 7, "x": 2, "y": 8}]'
+            json_dictionary,
+            '[{"id": 123, "width": 10,' ' "height": 7, "x": 2, "y": 8}]',
         )
 
         json_dictionary = Base.to_json_string(None)
@@ -62,8 +62,7 @@ class TestBase(unittest.TestCase):
         self.assertEqual(
             list_output,
             [{"height": 4, "width": 10, "id": 89},
-             {"height": 7, "width": 1, "id": 7}],
-        )
+             {"height": 7, "width": 1, "id": 7}])
         list_output = Rectangle.from_json_string(None)
         self.assertEqual(list_output, [])
         json_list_input = Rectangle.to_json_string(None)
@@ -97,6 +96,7 @@ class TestBase(unittest.TestCase):
             os.remove("Rectangle.json")
         list_rectangles_output = Rectangle.load_from_file()
         self.assertEqual(list_rectangles_output, [])
+
     def test_save_to_file_csv(self):
         r1 = Rectangle(10, 7, 2, 8, 410)
         r2 = Rectangle(2, 4, 8, 15, 411)
@@ -111,6 +111,7 @@ class TestBase(unittest.TestCase):
         with redirect_stdout(buffer2):
             print(list_rectangles_output[1], end="")
         self.assertEqual(buffer2.getvalue(), "[Rectangle] (411) 8/15 - 2/4")
+
     def test_load_from_file_csv(self):
         s1 = Square(5, 10, 12, 420)
         s2 = Square(7, 9, 1, 421)
