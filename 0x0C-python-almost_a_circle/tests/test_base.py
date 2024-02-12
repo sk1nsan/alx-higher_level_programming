@@ -97,3 +97,31 @@ class TestBase(unittest.TestCase):
             os.remove("Rectangle.json")
         list_rectangles_output = Rectangle.load_from_file()
         self.assertEqual(list_rectangles_output, [])
+    def test_save_to_file_csv(self):
+        r1 = Rectangle(10, 7, 2, 8, 410)
+        r2 = Rectangle(2, 4, 8, 15, 411)
+        list_rectangles_input = [r1, r2]
+        Rectangle.save_to_file_csv(list_rectangles_input)
+        list_rectangles_output = Rectangle.load_from_file_csv()
+        buffer1 = io.StringIO()
+        with redirect_stdout(buffer1):
+            print(list_rectangles_output[0], end="")
+        self.assertEqual(buffer1.getvalue(), "[Rectangle] (410) 2/8 - 10/7")
+        buffer2 = io.StringIO()
+        with redirect_stdout(buffer2):
+            print(list_rectangles_output[1], end="")
+        self.assertEqual(buffer2.getvalue(), "[Rectangle] (411) 8/15 - 2/4")
+    def test_load_from_file_csv(self):
+        s1 = Square(5, 10, 12, 420)
+        s2 = Square(7, 9, 1, 421)
+        list_squares_input = [s1, s2]
+        Square.save_to_file_csv(list_squares_input)
+        list_squares_output = Square.load_from_file_csv()
+        buffer1 = io.StringIO()
+        with redirect_stdout(buffer1):
+            print(list_squares_output[0], end="")
+        self.assertEqual(buffer1.getvalue(), "[Square] (420) 10/12 - 5")
+        buffer2 = io.StringIO()
+        with redirect_stdout(buffer2):
+            print(list_squares_output[1], end="")
+        self.assertEqual(buffer2.getvalue(), "[Square] (421) 9/1 - 7")
